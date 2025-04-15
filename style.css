@@ -1,0 +1,724 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px; /* Tamanho da fonte padrão */
+}
+
+::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem */
+}
+::-webkit-scrollbar-thumb {
+  background-color: #003f18; /* Cor do polegar da barra de rolagem */
+  border-radius: 10px; /* Bordas arredondadas do polegar */
+}
+::-webkit-scrollbar-track {
+  background-color: #a08368; /* Cor do fundo da barra de rolagem */
+  border-radius: 10px; /* Bordas arredondadas do fundo */
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #003f18be; /* Cor do polegar ao passar o mouse */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Navigation Bar */
+
+a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+a:hover {
+  background: rgba(0, 0, 0, 0);
+}
+
+#logo {
+  font-size: 1.9rem;
+  font-weight: bold;
+  font-family: "Ubuntu", sans-serif;
+  color: rgb(255, 255, 255);
+}
+
+#logo-container img {
+  width: 50px;
+  height: 50px;
+  margin-left: 1rem;
+}
+
+#logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#header {
+  box-sizing: border-box;
+  height: 70px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  justify-content: space-between;
+  background: rgba(49, 49, 49, 0.075);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(13.5px);
+  -webkit-backdrop-filter: blur(13.5px);
+  border: 1px solid rgba(255, 255, 255, 0.151);
+}
+
+#menu {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+}
+
+#menu a {
+  display: block;
+  padding: 0.5rem;
+  font-family: "inter", sans-serif;
+  animation: fadeIn 0.5s;
+}
+
+#menu a:hover {
+  background: #024217;
+  border-radius: 0.5rem;
+  transition: 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#menu a:hover {
+  border-radius: 0.5rem;
+}
+
+#btn-mobile {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  #menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    right: 0px;
+    background: rgba(255, 255, 255, 0.24);
+    box-shadow: 0 8px 32px 0 rgba(0, 7, 65, 0.37);
+    backdrop-filter: blur(13.5px);
+    -webkit-backdrop-filter: blur(13.5px);
+    border: 1px solid rgba(255, 255, 255, 0.151);
+    transition: 0.6s;
+    z-index: 1000;
+    height: 0px;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+
+  #nav.active #menu {
+    height: calc(100vh - 70px);
+    visibility: visible;
+    overflow-y: auto;
+  }
+
+  #menu a {
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+  }
+
+  #btn-mobile {
+    display: flex;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 0.5rem;
+    color: rgb(28, 114, 2);
+  }
+
+  #hamburger {
+    border-top: 2px solid;
+    width: 20px;
+    margin-top: -3px;
+  }
+
+  #hamburger::after,
+  #hamburger::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+  }
+
+  #nav.active #hamburger {
+    border-top-color: transparent;
+  }
+
+  #nav.active #hamburger::before {
+    transform: rotate(135deg);
+  }
+
+  #nav.active #hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+
+  #logo {
+    margin-left: 0.5rem;
+  }
+}
+
+/*end of Navigation Bar*/
+
+/*Banner*/
+
+.banner {
+  background: #003333; /* Cor de fundo do banner */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1;
+  height: 100vh;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.banner img {
+  width: 400px;
+  height: 400px;
+  margin-bottom: 20px;
+}
+
+.banner h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.banner p {
+  font-size: 1.2rem;
+  max-width: 1000px; /* Largura máxima do texto */
+  margin: 0 auto; /* Centraliza o texto */
+  padding: 0 20px; /* Adiciona espaçamento lateral */
+  line-height: 1.5; /* Aumenta o espaçamento entre linhas */
+}
+
+@media (max-width: 768px) {
+  .banner h1 {
+    font-size: 2rem;
+  }
+
+  .banner p {
+    font-size: 1rem;
+  }
+}
+
+/* Sobre Sustentabilidade */
+.sobre-sustentabilidade {
+  background-color: #d8ae87; /* Cor de fundo do container */
+  padding: 100px;
+  text-align: center;
+  color: #000000; /* Cor do texto */
+  font-family: "Poppins", sans-serif; /* Fonte do texto */
+  line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+}
+
+.sobre-sustentabilidade h1 {
+  font-size: 2.8em;
+  margin-bottom: 20px;
+  color: #000000; /* Cor do título */
+}
+
+.sobre-sustentabilidade p {
+  font-size: 1.2em; /* Aumenta o tamanho da fonte */
+  color: #000000; /* Cor do texto */
+  margin-bottom: 30px; /* Espaçamento abaixo do parágrafo */
+  line-height: 2; /* Aumenta o espaçamento entre linhas */
+  max-width: 100%; /* Largura máxima do texto */
+  margin: 0 auto; /* Centraliza o texto */
+  padding: 0 20px; /* Adiciona espaçamento lateral */
+  text-align: justify; /* Justifica o texto */
+  text-justify: inter-word; /* Melhora a justificação do texto */
+  font-family: "Poppins", sans-serif; /* Fonte do texto */
+  font-weight: 400; /* Peso da fonte */
+}
+
+.sobre-sustentabilidade strong {
+  background-color: #8cec79; /* Cor do texto em negrito */
+  font-weight: 700; /* Peso da fonte em negrito */
+  padding: 5px; /* Espaçamento interno do texto em negrito */
+  border-radius: 5px; /* Bordas arredondadas do texto em negrito */
+}
+
+.curiosidade {
+  background-color: #03ff3a; /* Cor de fundo da seção de curiosidades */
+  padding: 20px; /* Espaçamento interno da seção de curiosidades */
+  border-radius: 10px; /* Bordas arredondadas da seção de curiosidades */
+  margin-top: 50px; /* Espaçamento acima da seção de curiosidades */
+  margin-bottom: 50px; /* Espaçamento abaixo da seção de curiosidades */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra da seção de curiosidades */
+  max-width: 900px;
+  /* Largura máxima da seção de curiosidades */
+  margin: 50px auto; /* Centraliza a seção de curiosidades */
+  text-align: center; /* Centraliza o texto da seção de curiosidades */
+}
+
+.curiosidade h6 {
+  font-size: 2em; /* Tamanho da fonte do título de curiosidades */
+  margin-bottom: 10px; /* Espaçamento abaixo do título de curiosidades */
+  color: #000000; /* Cor do título de curiosidades */
+}
+
+.curiosidade p {
+  font-size: 1em; /* Tamanho da fonte do parágrafo de curiosidades */
+  color: #000000; /* Cor do parágrafo de curiosidades */
+  line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+  text-align: justify; /* Justifica o texto de curiosidades */
+  text-justify: inter-word; /* Melhora a justificação do texto de curiosidades */
+  font-family: "Poppins", sans-serif; /* Fonte do texto de curiosidades */
+  font-weight: 500; /* Peso da fonte do texto de curiosidades */
+  max-width: 900px; /* Largura máxima do texto de curiosidades */
+  margin: 0 auto; /* Centraliza o texto de curiosidades */
+  padding: 0 20px; /* Adiciona espaçamento lateral ao texto de curiosidades */
+}
+
+@media screen and (max-width: 768px) {
+  .sobre-sustentabilidade h1 {
+    font-size: 2em; /* Reduz o tamanho da fonte do título */
+  }
+
+  .sobre-sustentabilidade p {
+    font-size: 1em; /* Reduz o tamanho da fonte do parágrafo */
+  }
+
+  .sobre-sustentabilidade {
+    padding: 20px; /* Reduz o padding em telas menores */
+  }
+
+  .curiosidade {
+    padding: 20px; /* Reduz o padding em telas menores */
+  }
+  .curiosidade h6 {
+    font-size: 1.5em; /* Reduz o tamanho da fonte do título */
+  }
+
+  .curiosidade p {
+    font-size: 0.9em; /* Reduz o tamanho da fonte do parágrafo */
+  }
+}
+
+/* Conteudo - Impacto ambientais */
+.conteudo-container {
+  padding: 60px;
+  background-color: #003333; /* Cor de fundo do container */
+}
+
+.conteudo-container h1 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #ffffff; /* Rosa claro para o título */
+}
+
+.conteudo-container h6 {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #02cc78; /* Rosa claro para o título */
+}
+
+.conteudo-container p {
+  text-align: center;
+  font-size: 1.2em; /* Aumenta o tamanho da fonte */
+  color: #ffffff; /* Cor do texto */
+  margin-bottom: 30px; /* Espaçamento abaixo do parágrafo */
+  line-height: 2; /* Aumenta o espaçamento entre linhas */
+  max-width: 100%; /* Largura máxima do texto */
+  margin: 0 auto; /* Centraliza o texto */
+  padding: 0 20px; /* Adiciona espaçamento lateral */
+  text-align: justify; /* Justifica o texto */
+  text-justify: inter-word; /* Melhora a justificação do texto */
+  font-family: "Poppins", sans-serif; /* Fonte do texto */
+}
+
+
+.conteudo-explicativo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #003333; /* Cor de fundo do container */
+}
+
+.conteudo-explicativo li{
+  list-style-type: disc; /* Estilo de lista com marcadores */
+  margin-left: 20px; /* Margem à esquerda para a lista */
+  color: #ffffff; /* Cor do texto */
+  font-size: 1.2em; /* Aumenta o tamanho da fonte */
+  line-height: 2; /* Aumenta o espaçamento entre linhas */
+  text-align: justify; /* Justifica o texto */
+  text-justify: inter-word; /* Melhora a justificação do texto */
+  font-family: "Poppins", sans-serif; /* Fonte do texto */
+}
+
+.conteudo {
+  padding: 100px;
+  background-color: #202020; /* Cor de fundo do conteúdo */
+  color: #fff; /* Cor do texto */
+  margin: 0 auto;
+  max-width: 800px; /* Largura máxima do conteúdo */
+  text-align: justify; /* Justifica o texto */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif; /* Fonte do conteúdo */
+  line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+  margin-top: 20px; /* Espaçamento acima do conteúdo */
+  margin-bottom: 200px; /* Espaçamento abaixo do conteúdo */
+}
+
+.conteudo h1 {
+  font-size: 2.8em;
+  margin-bottom: 20px;
+}
+
+.conteudo h2 {
+  color: #8cec79; /* Rosa claro para os títulos */
+  padding: 20px 0; /* Espaçamento acima e abaixo do título */
+}
+
+.conteudo p {
+  line-height: 2; /* Aumenta o espaçamento entre linhas */
+  font-size: 1.2em; /* Aumenta o tamanho da fonte */
+  color: #e2e8f0; /* Cinza claro para boa leitura */
+}
+
+.conteudo ul {
+  list-style-type: disc; /* Estilo de lista com marcadores */
+  margin-left: 20px; /* Margem à esquerda para a lista */
+}
+
+@media screen and (max-width: 768px) {
+  .conteudo-container {
+    padding: 20px; /* Reduz o padding em telas menores */
+  }
+
+  .conteudo h1 {
+    font-size: 2em; /* Reduz o tamanho da fonte do título */
+  }
+
+  .conteudo p {
+    font-size: 1em; /* Reduz o tamanho da fonte do parágrafo */
+  }
+
+  .conteudo-explicativo {
+    flex-direction: column; /* Alinha os elementos em coluna */
+    align-items: center; /* Centraliza os elementos */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .conteudo h1 {
+    font-size: 1.5em; /* Reduz o tamanho da fonte do título */
+  }
+
+  .conteudo p {
+    font-size: 0.9em; /* Reduz o tamanho da fonte do parágrafo */
+  }
+
+  .conteudo-explicativo {
+    flex-direction: column; /* Alinha os elementos em coluna */
+    align-items: center; /* Centraliza os elementos */
+  }
+  .conteudo {
+    padding: 20px; /* Reduz o padding em telas menores */
+    max-width: 350px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o container */
+    margin-top: 20px; /* Espaçamento acima do conteúdo */
+    margin-bottom: 20px; /* Espaçamento abaixo do conteúdo */
+  }
+}
+
+/* Tipos de Lixeiras */
+.lixeiras {
+  background-color: #d8ae87; /* Cor de fundo do container */
+  padding: 100px;
+  color: #000000; /* Cor do texto */
+  font-family: "Poppins", sans-serif; /* Fonte do texto */
+  line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+}
+
+.section-title {
+  text-align: center;
+  color: #1c7c54;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.section-description {
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  font-size: 1rem;
+  color: #000000;
+  line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+  text-align: justify; /* Justifica o texto */
+  text-justify: inter-word; /* Melhora a justificação do texto */
+  font-family: "Poppins", sans-serif; /* Fonte do texto */
+  font-weight: 500; /* Peso da fonte */
+  font-size: 20px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 25px 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+#card1 {
+  background-color: #95c11f;
+}
+#card2 {
+  background-color: #ffed00;
+}
+#card3 {
+  background-color: #009fe3;
+}
+#card4 {
+  background-color: #e94e1b;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  color: #000000;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #1b1b1b;
+  font-size: 0.95rem;
+}
+
+@media screen and (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+  .section-description {
+    font-size: 1.2rem;
+    line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+    text-align: justify; /* Justifica o texto de curiosidades */
+    text-justify: inter-word; /* Melhora a justificação do texto de curiosidades */
+    font-family: "Poppins", sans-serif; /* Fonte do texto de curiosidades */
+    font-weight: 500; /* Peso da fonte do texto de curiosidades */
+    max-width: 100%; /* Largura máxima do texto de curiosidades */
+  }
+
+  .card img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card {
+    padding: 20px 15px;
+  }
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.emoji {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-weight: bold;
+  color: #2e7d32;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 500px) {
+  body {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+}
+
+.tipos-residuos {
+  background-color: #003333; /* Cor de fundo do container */
+  padding: 100px;
+  text-align: center;
+  color: #000000; /* Cor do texto */
+  font-family: "Poppins", sans-serif; /* Fonte do texto */
+  line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+}
+.tipos-residuos h1 {
+  font-size: 2.8em;
+  margin-bottom: 20px;
+  color: #ffffff; /* Cor do título */
+}
+.tipos-residuos p {
+  font-size: 1.2em; /* Aumenta o tamanho da fonte */
+  color: #ffffff; /* Cor do texto */
+  margin-bottom: 50px; /* Espaçamento abaixo do parágrafo */
+  line-height: 2; /* Aumenta o espaçamento entre linhas */
+  max-width: 100%; /* Largura máxima do texto */
+  margin: 0 auto; /* Centraliza o texto */
+  padding: 0 20px; /* Adiciona espaçamento lateral */
+  text-align: justify; /* Justifica o texto */
+  text-justify: inter-word; /* Melhora a justificação do texto */
+  font-family: "Poppins", sans-serif; /* Fonte do texto */
+  font-weight: 400; /* Peso da fonte */
+}
+
+@media  screen and (max-width: 768px) {
+  .tipos-residuos h1 {
+    font-size: 2em; /* Reduz o tamanho da fonte do título */
+  }
+
+  .tipos-residuos p {
+    font-size: 1em; /* Reduz o tamanho da fonte do parágrafo */
+  }
+  .tipos-residuos {
+    padding: 20px; /* Reduz o padding em telas menores */
+  }
+  
+}
+
+/* Footer */
+
+footer {
+  background-color: #001111; /* Cor de fundo do rodapé */
+  color: #ffffff; /* Cor do texto do rodapé */
+  padding: 20px; /* Espaçamento interno do rodapé */
+  text-align: center; /* Centraliza o texto do rodapé */
+  font-family: "Poppins", sans-serif; /* Fonte do texto do rodapé */
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0; /* Remove a margem do parágrafo */
+  font-size: 15px; /* Tamanho da fonte do parágrafo */
+  color: #ffffff; /* Cor do texto do parágrafo */
+  margin-bottom: 10px; /* Espaçamento abaixo do parágrafo */
+  line-height: 1.5; /* Aumenta o espaçamento entre linhas */
+}
+
+footer img {
+  width: 100px; /* Largura da imagem do rodapé */
+  height: 100px; /* Altura da imagem do rodapé */
+  margin-left: 5px; /* Margem à esquerda da imagem do rodapé */
+}
+
+.footer-bottom p {
+  margin: 0; /* Remove a margem do parágrafo */
+  font-size: 15px; /* Tamanho da fonte do parágrafo */
+  color: #ffffff; /* Cor do texto do parágrafo */
+
+}
+
+@media  screen and (max-width: 768px) {
+  footer {
+    padding: 10px; /* Reduz o padding em telas menores */
+  }
+
+  footer p {
+    font-size: 12px; /* Reduz o tamanho da fonte do parágrafo */
+  }
+
+  footer img {
+    width: 80px; /* Reduz a largura da imagem do rodapé */
+    height: 80px; /* Reduz a altura da imagem do rodapé */
+  }
+  .footer-bottom p {
+    font-size: 12px; /* Reduz o tamanho da fonte do parágrafo */
+  }
+  .footer-bottom {
+    padding: 10px; /* Reduz o padding em telas menores */
+  }
+
+}
