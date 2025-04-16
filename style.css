@@ -494,10 +494,10 @@ a:hover {
 }
 
 @media (max-width: 500px) {
-  body {
-    padding: 1rem;
+ 
+  .trash-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
-
   .trash-card {
     padding: 1rem;
   }
