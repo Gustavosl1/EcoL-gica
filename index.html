@@ -12,6 +12,22 @@
       referrerpolicy="no-referrer"
     />
     <link rel="shortcut icon" href="image/logo.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <!--fontawesome-->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/abddfb1a86.js"
+      crossorigin="anonymous"
+    ></script>
+
     <title>EcoLógica</title>
   </head>
   <body>
@@ -35,9 +51,9 @@
         <ul id="menu" role="menu">
           <li><a href="#Sobre">Sustabilidade</a></li>
           <li><a href="#impactos-ambientais">Impactos Ambientais</a></li>
-          <li><a href="#tipos-descartes">Tipos de Descartes</a></li>
+          <li><a href="#tipos-descartes">Tipos de Lixeiras</a></li>
           <li><a href="#tipos-residuos">Tipos de Resíduos</a></li>
-          <li><a href="#footer">Local para Descarte</a></li>
+          <li><a href="#local-descarte">Local para Descarte</a></li>
         </ul>
       </nav>
     </header>
@@ -166,36 +182,22 @@
     </section>
 
     <!--Lixeiras-->
-    <div class="lixeiras" id="tipos-descartes">
-      <h2 class="section-title">Tipos de Descartes</h2>
-      <p class="section-description">
-        Conhecer os tipos de lixeiras e como descartar corretamente seus
-        resíduos é um passo essencial para promover a sustentabilidade e cuidar
-        do nosso planeta.
+    <div class="tipos-lixeiras" id="tipos-descartes">
+      <h1>Tipos de Lixeiras 🗑️</h1>
+      <p>
+        As lixeiras são essenciais para a gestão de resíduos sólidos. Elas
+        facilitam a separação e o descarte adequado dos materiais, contribuindo
+        para a reciclagem e a preservação do meio ambiente. Conhecer os tipos de
+        lixeiras e suas funções é fundamental para um descarte consciente.
+        <br />
+        <strong
+          >Descubra os diferentes tipos de lixeiras e como utilizá-las!</strong
+        >
       </p>
 
-      <section class="cards-container">
-        <div class="card" id="card1">
-          <img src="image/lixeira-verde.png" alt="Lixeira Verde" />
-          <h3>Lixeira Verde</h3>
-          <p>Para papel e papelão como jornais, revistas e embalagens.</p>
-        </div>
-        <div class="card" id="card2">
-          <img src="image/lixeira-amarela.png" alt="Lixeira Amarela" />
-          <h3>Lixeira Amarela</h3>
-          <p>Para metais como latas de alumínio, tampas e arames.</p>
-        </div>
-        <div class="card" id="card3">
-          <img src="image/lixeira-azul.png" alt="Lixeira Azul" />
-          <h3>Lixeira Azul</h3>
-          <p>Para plásticos como garrafas, sacolas e potes de alimentos.</p>
-        </div>
-        <div class="card" id="card4">
-          <img src="image/lixeira-vermelha.png" alt="Lixeira Vermelha" />
-          <h3>Lixeira Vermelha</h3>
-          <p>Para resíduos perigosos, como pilhas, baterias e eletrônicos.</p>
-        </div>
-      </section>
+      <div class="trash-container" id="trashContainer">
+        <!-- Cards serão gerados aqui -->
+      </div>
     </div>
 
     <!--Tipos de Resíduos-->
@@ -213,28 +215,35 @@
       </div>
     </div>
 
+    <!--Mapa-->
+    <div class="mapa" id="local-descarte">
+      <h1>Mapa de Locais de Coleta ♻️</h1>
+      <p>
+        Encontre os pontos de coleta mais próximos de você e faça a sua parte na
+        preservação do meio ambiente. Clique no mapa para visualizar os locais
+        disponíveis.
+      </p>
+      <div id="map"></div>
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    </div>
+
     <!--Footer-->
     <footer id="footer">
       <div class="footer-content">
         <img src="image/logo.png" alt="Logo EcoLógica" id="footer-logo" />
         <h2>EcoLógica</h2>
         <p>Menos Lixo, Mais Futuro</p>
-        <div class="social-media">
-          <a href="https://www.instagram.com/" target="_blank"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a href="https://www.facebook.com/" target="_blank"
-            ><i class="fab fa-facebook"></i
-          ></a>
-          <a href="https://www.twitter.com/" target="_blank"
-            ><i class="fab fa-twitter"></i
-          ></a>
-        </div>
       </div>
       <div class="footer-bottom">
         <p>&copy; 2023 EcoLógica. Todos os direitos reservados.</p>
       </div>
     </footer>
+
+    <!--Botão ao topo-->
+
+    <button id="scrollTopBtn" title="Voltar ao topo">
+      <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
   </body>

@@ -16,6 +16,83 @@ function toggleMenu(event) {
 btnMobile.addEventListener("click", toggleMenu);
 btnMobile.addEventListener("touchstart", toggleMenu);
 
+// Tipos de Lixeiras e suas Descrições //
+
+const lixeiras = [
+  {
+    emoji: "🔵",
+    titulo: "Azul - Papel",
+    descricao: "Papéis, jornais, revistas, caixas de papelão.",
+    cor: "#2196f3",
+  },
+  {
+    emoji: "🟡",
+    titulo: "Amarela - Metal",
+    descricao: "Latas de alumínio, tampas, grampos, fios de cobre.",
+    cor: "#fbc02d",
+  },
+  {
+    emoji: "🟢",
+    titulo: "Verde - Vidro",
+    descricao: "Garrafas, frascos, potes de vidro. Evite vidros quebrados.",
+    cor: "#43a047",
+  },
+  {
+    emoji: "🔴",
+    titulo: "Vermelha - Plástico",
+    descricao: "Garrafas PET, potes, sacolas plásticas e brinquedos.",
+    cor: "#e53935",
+  },
+  {
+    emoji: "⚪",
+    titulo: "Branca - Resíduos de Saúde",
+    descricao: "Resíduos hospitalares e contaminantes. Uso profissional.",
+    cor: "#cfd8dc",
+  },
+  {
+    emoji: "🟤",
+    titulo: "Marrom - Orgânico",
+    descricao: "Restos de alimentos, folhas e resíduos de jardim.",
+    cor: "#8d6e63",
+  },
+  {
+    emoji: "⚫",
+    titulo: "Preta - Rejeitos",
+    descricao: "Materiais não recicláveis, como papel higiênico e fraldas.",
+    cor: "#424242",
+  },
+  {
+    emoji: "🟣",
+    titulo: "Roxa - Radioativos",
+    descricao: "Material radioativo, usado em hospitais e laboratórios.",
+    cor: "#9c27b0",
+  },
+  {
+    emoji: "🟠",
+    titulo: "Laranja - Perigosos",
+    descricao: "Pilhas, baterias, produtos químicos, tóxicos ou inflamáveis.",
+    cor: "#ff9800",
+  },
+];
+
+const containe = document.getElementById("trashContainer");
+
+lixeiras.forEach((item) => {
+  const card = document.createElement("div");
+  card.classList.add("trash-card");
+  card.style.borderTopColor = item.cor;
+
+  card.innerHTML = `
+    <div class="trash-emoji">${item.emoji}</div>
+    <div class="trash-title">${item.titulo}</div>
+    <div class="trash-description">${item.descricao}</div>
+  `;
+
+  containe.appendChild(card);
+});
+
+// Tipos de Resíduos e suas Descrições //
+
 const residuos = [
   {
     emoji: "🟢",
@@ -78,4 +155,78 @@ residuos.forEach((item) => {
     <div class="description">${item.descricao}</div>
   `;
   container.appendChild(card);
+});
+
+// Mapa de Locais de Coleta //
+
+const map = L.map("map").setView([-23.4427, -46.7952], 13); // São Paulo como exemplo
+
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution: "© OpenStreetMap",
+}).addTo(map);
+
+const locaisDeColeta = [
+  {
+    nome: "Ecoponto: Recanto dos Humildes",
+    tipo: "Entulhos, Árvores, móveis, fios e cabos",
+    endereco: "Rua Sales Gomes, nº 415 – Bairro: Vila Perus",
+    cep: "05211-200",
+    funcionamento:
+      "Segunda a sábado das 6h às 22h. Domingos e feriados das 6h às 18h.",
+    coords: [-23.408955, -46.750728],
+  },
+  {
+    nome: "Ecoponto: Jardim Santa Fé",
+    tipo: "Eletronicos, entulhos, móveis e outros",
+    endereco: "Rua Salvador Albano nº156 – Jardim Santa Fé (Zona Oeste)",
+    cep: "05271-090",
+    funcionamento:
+      "Segunda a sábado das 6h às 22h. Domingos e feriados das 6h às 18h.",
+    coords: [-23.431612, -46.791833],
+  },
+  {
+    nome: "Drogasil Jardim Santa Fé",
+    tipo: "Remédios vencidos e na validade",
+    endereco: "Rua Leopoldo de Passos Lima, 101-Jardim Santa Fé (Zona Oeste)",
+    cep: "05271-000",
+    funcionamento: "Segunda a domingo das 7h às 23h.",
+    telefone: "(11) 973610728",
+    coords: [-23.430628, -46.788364],
+  },
+];
+
+locaisDeColeta.forEach((local) => {
+  L.marker(local.coords).addTo(map).bindPopup(`
+          <div class="popup-title">${local.nome}</div>
+          <div><strong>Tipo:</strong> ${local.tipo}</div>
+          <div><strong>Endereço:</strong> ${local.endereco}</div>
+          <div><strong>CEP:</strong> ${local.cep}</div>
+          ${
+            local.funcionamento
+              ? `<div><strong>Funcionamento:</strong> ${local.funcionamento}</div>`
+              : ""
+          }
+          ${
+            local.telefone
+              ? `<div><strong>Telefone:</strong> ${local.telefone}</div>`
+              : ""
+          }
+        `);
+});
+
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollTopBtn.classList.add("show");
+  } else {
+    scrollTopBtn.classList.remove("show");
+  }
+});
+
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 });

@@ -456,119 +456,105 @@ a:hover {
 }
 
 /* Tipos de Lixeiras */
-.lixeiras {
+
+.trash-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.trash-card {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border-top: 6px solid;
+}
+
+.trash-card:hover {
+  transform: translateY(-5px);
+}
+
+.trash-emoji {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.trash-title {
+  font-weight: bold;
+  color: #1565c0;
+  margin-bottom: 0.5rem;
+}
+
+.trash-description {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 500px) {
+  body {
+    padding: 1rem;
+  }
+
+  .trash-card {
+    padding: 1rem;
+  }
+}
+
+.tipos-lixeiras {
   background-color: #d8ae87; /* Cor de fundo do container */
   padding: 100px;
+  text-align: center;
   color: #000000; /* Cor do texto */
   font-family: "Poppins", sans-serif; /* Fonte do texto */
   line-height: 1.6; /* Aumenta o espaçamento entre linhas */
 }
 
-.section-title {
-  text-align: center;
-  color: #1c7c54;
-  font-size: 2rem;
-  margin-bottom: 10px;
+.tipos-lixeiras h1 {
+  font-size: 2.8em;
+  margin-bottom: 20px;
+  color: #000000; /* Cor do título */
 }
 
-.section-description {
-  max-width: 900px;
-  margin: 0 auto 40px auto;
-  font-size: 1rem;
-  color: #000000;
-  line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+.tipos-lixeiras p {
+  font-size: 1.2em; /* Aumenta o tamanho da fonte */
+  color: #000000; /* Cor do texto */
+  margin-bottom: 50px; /* Espaçamento abaixo do parágrafo */
+  line-height: 2; /* Aumenta o espaçamento entre linhas */
+  max-width: 100%; /* Largura máxima do texto */
+  margin: 0 auto; /* Centraliza o texto */
+  padding: 0 20px; /* Adiciona espaçamento lateral */
   text-align: justify; /* Justifica o texto */
   text-justify: inter-word; /* Melhora a justificação do texto */
   font-family: "Poppins", sans-serif; /* Fonte do texto */
-  font-weight: 500; /* Peso da fonte */
-  font-size: 20px;
+  font-weight: 400; /* Peso da fonte */
+  text-align: center; /* Centraliza o texto */
+  margin: 20px;
 }
 
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.card {
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 25px 20px;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-#card1 {
-  background-color: #95c11f;
-}
-#card2 {
-  background-color: #ffed00;
-}
-#card3 {
-  background-color: #009fe3;
-}
-#card4 {
-  background-color: #e94e1b;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-}
-
-.card img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 15px;
-}
-
-.card h3 {
-  color: #000000;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-.card p {
-  color: #1b1b1b;
-  font-size: 0.95rem;
+.tipos-lixeiras strong {
+  background-color: #8cec79; /* Cor do texto em negrito */
+  font-weight: 700; /* Peso da fonte em negrito */
+  padding: 5px; /* Espaçamento interno do texto em negrito */
+  border-radius: 5px; /* Bordas arredondadas do texto em negrito */
 }
 
 @media screen and (max-width: 768px) {
-  .cards-container {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  .tipos-lixeiras h1 {
+    font-size: 2em; /* Reduz o tamanho da fonte do título */
   }
 
-  .card h3 {
-    font-size: 1.1rem;
+  .tipos-lixeiras p {
+    font-size: 1em; /* Reduz o tamanho da fonte do parágrafo */
   }
-
-  .card p {
-    font-size: 0.85rem;
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
-  .section-description {
-    font-size: 1.2rem;
-    line-height: 1.6; /* Aumenta o espaçamento entre linhas */
-    text-align: justify; /* Justifica o texto de curiosidades */
-    text-justify: inter-word; /* Melhora a justificação do texto de curiosidades */
-    font-family: "Poppins", sans-serif; /* Fonte do texto de curiosidades */
-    font-weight: 500; /* Peso da fonte do texto de curiosidades */
-    max-width: 100%; /* Largura máxima do texto de curiosidades */
-  }
-
-  .card img {
-    width: 50px;
-    height: 50px;
-  }
-
-  .card {
-    padding: 20px 15px;
+  .tipos-lixeiras {
+    padding: 20px; /* Reduz o padding em telas menores */
   }
 }
+
+/* Tipos de Resíduos */
 
 .card-container {
   display: grid;
@@ -654,6 +640,118 @@ a:hover {
   }
   .tipos-residuos {
     padding: 20px; /* Reduz o padding em telas menores */
+  }
+}
+
+/* Mapa de coleta */
+
+.mapa {
+  background-color: #d8ae87; /* Cor de fundo do container */
+  padding: 100px;
+  text-align: center;
+  color: #000000; /* Cor do texto */
+  font-family: "Poppins", sans-serif; /* Fonte do texto */
+  line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+}
+
+.mapa h1 {
+  font-size: 2.8em;
+  margin-bottom: 20px;
+  color: #000000; /* Cor do título */
+}
+
+.mapa p {
+  font-size: 1.2em; /* Aumenta o tamanho da fonte */
+  color: #000000; /* Cor do texto */
+  margin-bottom: 50px; /* Espaçamento abaixo do parágrafo */
+  line-height: 2; /* Aumenta o espaçamento entre linhas */
+  max-width: 100%; /* Largura máxima do texto */
+  margin: 0 auto; /* Centraliza o texto */
+  padding: 0 20px; /* Adiciona espaçamento lateral */
+  text-align: justify; /* Justifica o texto */
+  text-justify: inter-word; /* Melhora a justificação do texto */
+  font-family: "Poppins", sans-serif; /* Fonte do texto */
+  font-weight: 400; /* Peso da fonte */
+  text-align: center; /* Centraliza o texto */
+  margin: 20px;
+}
+
+#map {
+  height: 70vh;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.popup-title {
+  font-weight: bold;
+  color: #0804ff;
+  margin-bottom: 0.3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .mapa h1 {
+    font-size: 2em; /* Reduz o tamanho da fonte do título */
+  }
+
+  .mapa p {
+    font-size: 1em; /* Reduz o tamanho da fonte do parágrafo */
+  }
+  .mapa {
+    padding: 20px; /* Reduz o padding em telas menores */
+  }
+  #map {
+    height: 50vh; /* Reduz a altura do mapa em telas menores */
+  }
+
+  .popup-title {
+    font-size: 1.2em; /* Reduz o tamanho da fonte do título do popup */
+  }
+  .popup-description {
+    font-size: 1em; /* Reduz o tamanho da fonte da descrição do popup */
+  }
+  .popup-description {
+    font-size: 0.9em; /* Reduz o tamanho da fonte da descrição do popup */
+  }
+}
+
+/* Botão de Voltar ao Topo */
+
+#scrollTopBtn {
+  position: fixed;
+  border-radius: 50%;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 28px;
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.3s, transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#scrollTopBtn.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#scrollTopBtn:hover {
+  background-color: #45a049;
+}
+
+@media screen and (max-width: 768px) {
+  #scrollTopBtn {
+    padding: 10px; /* Reduz o padding em telas menores */
+    font-size: 20px; /* Reduz o tamanho da fonte do botão */
+  }
+  #scrollTopBtn {
+    bottom: 10px; /* Reduz a distância do botão em telas menores */
+    right: 10px; /* Reduz a distância do botão em telas menores */
   }
 }
 
