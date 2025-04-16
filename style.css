@@ -232,8 +232,6 @@ a:hover {
   }
 }
 
-
-
 /* Sobre Sustentabilidade */
 .sobre-sustentabilidade {
   background-color: #d8ae87; /* Cor de fundo do container */
@@ -362,7 +360,6 @@ a:hover {
   font-family: "Poppins", sans-serif; /* Fonte do texto */
 }
 
-
 .conteudo-explicativo {
   display: flex;
   justify-content: center;
@@ -370,7 +367,7 @@ a:hover {
   background-color: #003333; /* Cor de fundo do container */
 }
 
-.conteudo-explicativo li{
+.conteudo-explicativo li {
   list-style-type: disc; /* Estilo de lista com marcadores */
   margin-left: 20px; /* Margem à esquerda para a lista */
   color: #ffffff; /* Cor do texto */
@@ -647,7 +644,7 @@ a:hover {
   margin: 20px;
 }
 
-@media  screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .tipos-residuos h1 {
     font-size: 2em; /* Reduz o tamanho da fonte do título */
   }
@@ -658,7 +655,6 @@ a:hover {
   .tipos-residuos {
     padding: 20px; /* Reduz o padding em telas menores */
   }
-  
 }
 
 /* Footer */
@@ -692,10 +688,9 @@ footer img {
   margin: 0; /* Remove a margem do parágrafo */
   font-size: 15px; /* Tamanho da fonte do parágrafo */
   color: #ffffff; /* Cor do texto do parágrafo */
-
 }
 
-@media  screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   footer {
     padding: 10px; /* Reduz o padding em telas menores */
   }
@@ -714,5 +709,4 @@ footer img {
   .footer-bottom {
     padding: 10px; /* Reduz o padding em telas menores */
   }
-
 }
