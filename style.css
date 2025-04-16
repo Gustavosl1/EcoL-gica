@@ -7,6 +7,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  scroll-padding-top: 70px; /* Altura do cabeçalho fixo */
 }
 
 ::-webkit-scrollbar {
@@ -231,7 +232,6 @@ a:hover {
   }
 }
 
-/* Continuação do seu CSS permanece igual... */
 
 
 /* Sobre Sustentabilidade */
@@ -385,7 +385,7 @@ a:hover {
   padding: 100px;
   background-color: #202020; /* Cor de fundo do conteúdo */
   color: #fff; /* Cor do texto */
-  margin: 0 auto;
+  margin: 0 50px; /* Centraliza o conteúdo */
   max-width: 800px; /* Largura máxima do conteúdo */
   text-align: justify; /* Justifica o texto */
   border-radius: 10px;
@@ -609,8 +609,8 @@ a:hover {
 }
 
 @media (max-width: 500px) {
-  body {
-    padding: 1rem;
+  .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 
   .card {
@@ -643,6 +643,8 @@ a:hover {
   text-justify: inter-word; /* Melhora a justificação do texto */
   font-family: "Poppins", sans-serif; /* Fonte do texto */
   font-weight: 400; /* Peso da fonte */
+  text-align: center; /* Centraliza o texto */
+  margin: 20px;
 }
 
 @media  screen and (max-width: 768px) {
