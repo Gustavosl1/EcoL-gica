@@ -230,3 +230,134 @@ scrollTopBtn.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+
+ const questions = [
+      {
+        question: "Qual a cor da lixeira para papel?",
+        answers: [
+          { text: "Azul", correct: true },
+          { text: "Amarela", correct: false },
+          { text: "Verde", correct: false },
+          { text: "Vermelha", correct: false }
+        ]
+      },
+      {
+        question: "Qual hábito economiza mais água?",
+        answers: [
+          { text: "Tomar banhos curtos", correct: true },
+          { text: "Deixar a torneira aberta", correct: false },
+          { text: "Lavar calçada com mangueira", correct: false },
+          { text: "Encher piscina todo mês", correct: false }
+        ]
+      },
+      {
+        question: "Qual dessas energias é renovável?",
+        answers: [
+          { text: "Solar", correct: true },
+          { text: "Carvão mineral", correct: false },
+          { text: "Petróleo", correct: false },
+          { text: "Nuclear", correct: false }
+        ]
+      }
+    ];
+
+    const questionElement = document.getElementById("question");
+    const answerButtons = document.getElementById("answer-buttons");
+    const nextButton = document.getElementById("next-btn");
+    const feedbackElement = document.getElementById("feedback");
+    const historyElement = document.getElementById("history");
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    function startQuiz() {
+      currentQuestionIndex = 0;
+      score = 0;
+      nextButton.innerHTML = "Próxima";
+      showQuestion();
+      showHistory();
+    }
+
+    function showQuestion() {
+      resetState();
+      let currentQuestion = questions[currentQuestionIndex];
+      questionElement.innerHTML = currentQuestion.question;
+
+      currentQuestion.answers.forEach(answer => {
+        const button = document.createElement("button");
+        button.innerHTML = answer.text;
+        button.classList.add("btn-quiz");
+        button.addEventListener("click", () => selectAnswer(answer));
+        answerButtons.appendChild(button);
+      });
+    }
+
+    function resetState() {
+      nextButton.style.display = "none";
+      feedbackElement.innerHTML = "";
+      while (answerButtons.firstChild) {
+        answerButtons.removeChild(answerButtons.firstChild);
+      }
+    }
+
+    function selectAnswer(answer) {
+      if (answer.correct) {
+        score++;
+        feedbackElement.style.color = "green";
+        feedbackElement.innerHTML = "✅ Correto! Muito bem!";
+      } else {
+        feedbackElement.style.color = "red";
+        feedbackElement.innerHTML = "❌ Errado! Tente novamente.";
+      }
+      nextButton.style.display = "block";
+    }
+
+    function showScore() {
+      resetState();
+      questionElement.innerHTML = `Você acertou ${score} de ${questions.length} perguntas! 🌱`;
+      nextButton.innerHTML = "Jogar novamente";
+      nextButton.style.display = "block";
+
+      // 🔹 Salvar histórico no navegador
+      saveScore(score);
+      showHistory();
+    }
+
+    function handleNextButton() {
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        showQuestion();
+      } else {
+        showScore();
+      }
+    }
+
+    nextButton.addEventListener("click", () => {
+      if (currentQuestionIndex < questions.length) {
+        handleNextButton();
+      } else {
+        startQuiz();
+      }
+    });
+
+    // 📌 Funções para LocalStorage
+    function saveScore(score) {
+      let scores = JSON.parse(localStorage.getItem("quizScores")) || [];
+      scores.push(score);
+      localStorage.setItem("quizScores", JSON.stringify(scores));
+    }
+
+    function showHistory() {
+      let scores = JSON.parse(localStorage.getItem("quizScores")) || [];
+      if (scores.length > 0) {
+        let bestScore = Math.max(...scores);
+        historyElement.innerHTML = `
+          📊 Histórico: você já jogou ${scores.length} vezes.<br>
+          ⭐ Melhor resultado: ${bestScore} acertos.
+        `;
+      } else {
+        historyElement.innerHTML = "📊 Jogue para começar a registrar seu histórico!";
+      }
+    }
+
+    startQuiz();

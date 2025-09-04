@@ -1,3 +1,31 @@
+@font-face{
+  font-family: Champ-Black ;
+  src: url('./font/Champ-Black.ttf') format('truetype');
+}
+
+@font-face{
+  font-family: ArenaUno ;
+  src: url('./font/ArenaUno-Regular.ttf') format('truetype');
+}
+
+@font-face{
+  font-family: Inter ;
+  src: url('./font/Inter-Regular.ttf') format('truetype');
+}
+
+@font-face{
+  font-family:  Caitrion;
+  src: url('./font/CaitrionDemoDemo-j91xM.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Wagen;
+  src: url('./font/Wagen-zr143.otf') format('opentype');
+}
+
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -25,14 +53,16 @@ html {
   background-color: #003f18be;
 }
 
+
+
+
 body {
-  font-family: "Poppins", sans-serif;
   background-color: #ffffff;
   color: #333;
 }
 
 a {
-  color: #fff;
+  color: #00432c;
   text-decoration: none;
   font-family: sans-serif;
   font-weight: bold;
@@ -45,8 +75,8 @@ a:hover {
 #logo {
   font-size: 1.9rem;
   font-weight: bold;
-  font-family: "Ubuntu", sans-serif;
-  color: #fff;
+  font-family: "Champ-Black", sans-serif;
+  color: #00432c;
 }
 
 #logo-container img {
@@ -90,7 +120,7 @@ a:hover {
 }
 
 #menu a:hover {
-  background: #024217;
+  background: #B8D702;
   border-radius: 0.5rem;
   transition: 0.3s;
 }
@@ -190,8 +220,7 @@ a:hover {
 
 /* Banner */
 .banner {
-  background: #003333;
-  color: white;
+  background-color: #E6FDD6; /* Cor de fundo do banner */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -201,6 +230,7 @@ a:hover {
   height: 100vh;
   max-width: 100%;
   margin: 0 auto;
+  
 }
 
 .banner img {
@@ -210,8 +240,11 @@ a:hover {
 }
 
 .banner h1 {
-  font-size: 3.5rem;
+  font-size: 6rem;
+  font-family: "Champ-Black", sans-serif;
   margin-bottom: 10px;
+  color: #00432c;
+
 }
 
 .banner p {
@@ -220,6 +253,9 @@ a:hover {
   margin: 0 auto;
   padding: 0 20px;
   line-height: 1.5;
+  color: #00432c;
+  font-family: sans-serif;
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {
@@ -234,23 +270,23 @@ a:hover {
 
 /* Sobre Sustentabilidade */
 .sobre-sustentabilidade {
-  background-color: #d8ae87; /* Cor de fundo do container */
+  background-color: #00432c; /* Cor de fundo do container */
   padding: 100px;
   text-align: center;
-  color: #000000; /* Cor do texto */
-  font-family: "Poppins", sans-serif; /* Fonte do texto */
+  color: #ffffff; /* Cor do texto */
   line-height: 1.6; /* Aumenta o espaçamento entre linhas */
 }
 
 .sobre-sustentabilidade h1 {
   font-size: 2.8em;
+  font-family: "Champ-Black", sans-serif;
   margin-bottom: 20px;
-  color: #000000; /* Cor do título */
+  color: #ffffff; /* Cor do título */
 }
 
 .sobre-sustentabilidade p {
   font-size: 1.2em; /* Aumenta o tamanho da fonte */
-  color: #000000; /* Cor do texto */
+  color: #ffffff; /* Cor do texto */
   margin-bottom: 30px; /* Espaçamento abaixo do parágrafo */
   line-height: 2; /* Aumenta o espaçamento entre linhas */
   max-width: 100%; /* Largura máxima do texto */
@@ -258,19 +294,21 @@ a:hover {
   padding: 0 20px; /* Adiciona espaçamento lateral */
   text-align: justify; /* Justifica o texto */
   text-justify: inter-word; /* Melhora a justificação do texto */
-  font-family: "Poppins", sans-serif; /* Fonte do texto */
-  font-weight: 400; /* Peso da fonte */
+  font-family: "Wagen", sans-serif; /* Fonte do texto */
+  font-weight: 300; /* Peso da fonte */
+ 
 }
 
 .sobre-sustentabilidade strong {
-  background-color: #8cec79; /* Cor do texto em negrito */
+  background-color: #B8D702; /* Cor do texto em negrito */
+  color: #000000;
   font-weight: 700; /* Peso da fonte em negrito */
   padding: 5px; /* Espaçamento interno do texto em negrito */
   border-radius: 5px; /* Bordas arredondadas do texto em negrito */
 }
 
 .curiosidade {
-  background-color: #03ff3a; /* Cor de fundo da seção de curiosidades */
+  background-color: #B8D702; /* Cor de fundo da seção de curiosidades */
   padding: 20px; /* Espaçamento interno da seção de curiosidades */
   border-radius: 10px; /* Bordas arredondadas da seção de curiosidades */
   margin-top: 50px; /* Espaçamento acima da seção de curiosidades */
@@ -280,22 +318,24 @@ a:hover {
   /* Largura máxima da seção de curiosidades */
   margin: 50px auto; /* Centraliza a seção de curiosidades */
   text-align: center; /* Centraliza o texto da seção de curiosidades */
+  color: #00432c;
 }
 
 .curiosidade h6 {
   font-size: 2em; /* Tamanho da fonte do título de curiosidades */
   margin-bottom: 10px; /* Espaçamento abaixo do título de curiosidades */
-  color: #000000; /* Cor do título de curiosidades */
+  color: #00432c; /* Cor do título de curiosidades */
+  font-family: "Champ-Black", sans-serif; /* Fonte do título de curiosidades */
 }
 
 .curiosidade p {
   font-size: 1em; /* Tamanho da fonte do parágrafo de curiosidades */
-  color: #000000; /* Cor do parágrafo de curiosidades */
+  color: #00432c; /* Cor do parágrafo de curiosidades */
   line-height: 1.6; /* Aumenta o espaçamento entre linhas */
   text-align: justify; /* Justifica o texto de curiosidades */
   text-justify: inter-word; /* Melhora a justificação do texto de curiosidades */
-  font-family: "Poppins", sans-serif; /* Fonte do texto de curiosidades */
-  font-weight: 500; /* Peso da fonte do texto de curiosidades */
+  font-family: "Inter", sans-serif; /* Fonte do texto de curiosidades */
+  font-weight: 600; /* Peso da fonte do texto de curiosidades */
   max-width: 900px; /* Largura máxima do texto de curiosidades */
   margin: 0 auto; /* Centraliza o texto de curiosidades */
   padding: 0 20px; /* Adiciona espaçamento lateral ao texto de curiosidades */
@@ -329,27 +369,29 @@ a:hover {
 /* Conteudo - Impacto ambientais */
 .conteudo-container {
   padding: 60px;
-  background-color: #003333; /* Cor de fundo do container */
+  background-color: #E6FDD6; /* Cor de fundo do container */
 }
 
 .conteudo-container h1 {
   text-align: center;
   font-size: 2em;
   margin-bottom: 20px;
-  color: #ffffff; /* Rosa claro para o título */
+  color: #00432c; /* Rosa claro para o título */
+  font-family: "Champ-Black", sans-serif; /* Fonte do título */
 }
 
 .conteudo-container h6 {
   text-align: center;
   font-size: 1.5em;
   margin-bottom: 20px;
-  color: #02cc78; /* Rosa claro para o título */
+  color: #026c48; /* Rosa claro para o título */
+  font-family: "Champ-Black", sans-serif; /* Fonte do título */
 }
 
 .conteudo-container p {
   text-align: center;
   font-size: 1.2em; /* Aumenta o tamanho da fonte */
-  color: #ffffff; /* Cor do texto */
+  color: #000000; /* Cor do texto */
   margin-bottom: 30px; /* Espaçamento abaixo do parágrafo */
   line-height: 2; /* Aumenta o espaçamento entre linhas */
   max-width: 100%; /* Largura máxima do texto */
@@ -364,13 +406,13 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #003333; /* Cor de fundo do container */
+  background-color: #E6FDD6; /* Cor de fundo do container */
 }
 
 .conteudo-explicativo li {
   list-style-type: disc; /* Estilo de lista com marcadores */
   margin-left: 20px; /* Margem à esquerda para a lista */
-  color: #ffffff; /* Cor do texto */
+  color: #026c48; /* Cor do texto */
   font-size: 1.2em; /* Aumenta o tamanho da fonte */
   line-height: 2; /* Aumenta o espaçamento entre linhas */
   text-align: justify; /* Justifica o texto */
@@ -380,14 +422,13 @@ a:hover {
 
 .conteudo {
   padding: 100px;
-  background-color: #202020; /* Cor de fundo do conteúdo */
-  color: #fff; /* Cor do texto */
+  background-color: #B8D702; /* Cor de fundo do conteúdo */
+  color: #026c48; /* Cor do texto */
   margin: 0 50px; /* Centraliza o conteúdo */
   max-width: 800px; /* Largura máxima do conteúdo */
   text-align: justify; /* Justifica o texto */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: "Poppins", sans-serif; /* Fonte do conteúdo */
   line-height: 1.6; /* Aumenta o espaçamento entre linhas */
   margin-top: 20px; /* Espaçamento acima do conteúdo */
   margin-bottom: 200px; /* Espaçamento abaixo do conteúdo */
@@ -399,14 +440,15 @@ a:hover {
 }
 
 .conteudo h2 {
-  color: #8cec79; /* Rosa claro para os títulos */
+  color: #000000; /* Rosa claro para os títulos */
   padding: 20px 0; /* Espaçamento acima e abaixo do título */
+  font-family: "Champ-Black", sans-serif; /* Fonte do título */
 }
 
 .conteudo p {
   line-height: 2; /* Aumenta o espaçamento entre linhas */
   font-size: 1.2em; /* Aumenta o tamanho da fonte */
-  color: #e2e8f0; /* Cinza claro para boa leitura */
+  font-family: "Wagen", sans-serif; /* Fonte do texto */
 }
 
 .conteudo ul {
@@ -500,7 +542,7 @@ a:hover {
 }
 
 .tipos-lixeiras {
-  background-color: #d8ae87; /* Cor de fundo do container */
+  background-color: #ebd79c; /* Cor de fundo do container */
   padding: 100px;
   text-align: center;
   color: #000000; /* Cor do texto */
@@ -531,7 +573,7 @@ a:hover {
 }
 
 .tipos-lixeiras strong {
-  background-color: #8cec79; /* Cor do texto em negrito */
+  background-color: #f6c915; /* Cor do texto em negrito */
   font-weight: 700; /* Peso da fonte em negrito */
   padding: 5px; /* Espaçamento interno do texto em negrito */
   border-radius: 5px; /* Bordas arredondadas do texto em negrito */
@@ -598,7 +640,7 @@ a:hover {
 }
 
 .tipos-residuos {
-  background-color: #003333; /* Cor de fundo do container */
+  background-color: #031e0f; /* Cor de fundo do container */
   padding: 100px;
   text-align: center;
   color: #000000; /* Cor do texto */
@@ -642,7 +684,7 @@ a:hover {
 /* Mapa de coleta */
 
 .mapa {
-  background-color: #d8ae87; /* Cor de fundo do container */
+  background-color: #ebd79c; /* Cor de fundo do container */
   padding: 100px;
   text-align: center;
   color: #000000; /* Cor do texto */
@@ -804,3 +846,90 @@ footer img {
     padding: 10px; /* Reduz o padding em telas menores */
   }
 }
+
+/* Quiz Interativo */
+
+.quiz-intro {
+  background-color: #E6FDD6; /* Cor de fundo do container */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+} 
+.quiz-intro h1 {
+  font-size: 2.5em;
+  font-family: "Champ-Black", sans-serif;
+  margin-bottom: 20px;
+  color: #00432c; /* Cor do título */
+}
+.quiz-intro p {
+  font-size: 1.2em; /* Aumenta o tamanho da fonte */        
+  color: #000000; /* Cor do texto */
+  margin-bottom: 30px; /* Espaçamento abaixo do parágrafo */
+  line-height: 2; /* Aumenta o espaçamento entre linhas */
+  max-width: 100%; /* Largura máxima do texto */
+  margin: 0 auto; /* Centraliza o texto */
+  padding: 0 20px; /* Adiciona espaçamento lateral */
+  text-align: justify; /* Justifica o texto */
+  text-justify: inter-word; /* Melhora a justificação do texto */
+  font-family: "Poppins", sans-serif; /* Fonte do texto */
+  font-weight: 400; /* Peso da fonte */
+  text-align: center; /* Centraliza o texto */
+  margin: 20px;
+}
+
+
+   .quiz-container {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 400px;
+      text-align: center;
+      margin: 0 auto 50px auto;
+      font-family: 'Poppins', sans-serif;
+      margin-top: 50px;
+      margin-bottom: 100px;
+      
+    }
+    .quiz-container h2 {
+      margin-bottom: 15px;
+    }
+    .btn-quiz {
+      display: block;
+      width: 100%;
+      margin: 8px 0;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #B8D702;
+      color: #00432c;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    .btn-quiz:hover {
+      background: #02b174;
+    }
+
+
+    /* Botão de próxima pergunta */
+ #next-btn {
+  background: #00432c; /* azul */
+  margin-top: 15px;
+  color: white;
+}
+  #next-btn:hover {
+  background: #003d2c; /* azul mais escuro no hover */
+}
+
+    #feedback {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    #history {
+      margin-top: 20px;
+      background: #f9fafb;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
