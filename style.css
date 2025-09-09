@@ -1,30 +1,27 @@
-@font-face{
-  font-family: Champ-Black ;
-  src: url('./font/Champ-Black.ttf') format('truetype');
+@font-face {
+  font-family: Champ-Black;
+  src: url("./font/Champ-Black.ttf") format("truetype");
 }
 
-@font-face{
-  font-family: ArenaUno ;
-  src: url('./font/ArenaUno-Regular.ttf') format('truetype');
+@font-face {
+  font-family: ArenaUno;
+  src: url("./font/ArenaUno-Regular.ttf") format("truetype");
 }
 
-@font-face{
-  font-family: Inter ;
-  src: url('./font/Inter-Regular.ttf') format('truetype');
+@font-face {
+  font-family: Inter;
+  src: url("./font/Inter-Regular.ttf") format("truetype");
 }
 
-@font-face{
-  font-family:  Caitrion;
-  src: url('./font/CaitrionDemoDemo-j91xM.ttf') format('truetype');
+@font-face {
+  font-family: Caitrion;
+  src: url("./font/CaitrionDemoDemo-j91xM.ttf") format("truetype");
 }
 
 @font-face {
   font-family: Wagen;
-  src: url('./font/Wagen-zr143.otf') format('opentype');
+  src: url("./font/Wagen-zr143.otf") format("opentype");
 }
-
-
-
 
 * {
   margin: 0;
@@ -53,18 +50,14 @@ html {
   background-color: #003f18be;
 }
 
-
-
-
 body {
   background-color: #ffffff;
   color: #333;
 }
 
 a {
-  color: #00432c;
+  color: #031e0f;
   text-decoration: none;
-  font-family: sans-serif;
   font-weight: bold;
 }
 
@@ -115,12 +108,12 @@ a:hover {
 #menu a {
   display: block;
   padding: 0.5rem;
-  font-family: "Inter", sans-serif;
+  font-family: "Champ-Black", sans-serif;
   animation: fadeIn 0.5s;
 }
 
 #menu a:hover {
-  background: #B8D702;
+  background: #b8d702;
   border-radius: 0.5rem;
   transition: 0.3s;
 }
@@ -220,7 +213,7 @@ a:hover {
 
 /* Banner */
 .banner {
-  background-color: #E6FDD6; /* Cor de fundo do banner */
+  background-color: #e6fdd6; /* Cor de fundo do banner */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -230,7 +223,6 @@ a:hover {
   height: 100vh;
   max-width: 100%;
   margin: 0 auto;
-  
 }
 
 .banner img {
@@ -244,7 +236,6 @@ a:hover {
   font-family: "Champ-Black", sans-serif;
   margin-bottom: 10px;
   color: #00432c;
-
 }
 
 .banner p {
@@ -296,11 +287,10 @@ a:hover {
   text-justify: inter-word; /* Melhora a justificação do texto */
   font-family: "Wagen", sans-serif; /* Fonte do texto */
   font-weight: 300; /* Peso da fonte */
- 
 }
 
 .sobre-sustentabilidade strong {
-  background-color: #B8D702; /* Cor do texto em negrito */
+  background-color: #b8d702; /* Cor do texto em negrito */
   color: #000000;
   font-weight: 700; /* Peso da fonte em negrito */
   padding: 5px; /* Espaçamento interno do texto em negrito */
@@ -308,7 +298,7 @@ a:hover {
 }
 
 .curiosidade {
-  background-color: #B8D702; /* Cor de fundo da seção de curiosidades */
+  background-color: #b8d702; /* Cor de fundo da seção de curiosidades */
   padding: 20px; /* Espaçamento interno da seção de curiosidades */
   border-radius: 10px; /* Bordas arredondadas da seção de curiosidades */
   margin-top: 50px; /* Espaçamento acima da seção de curiosidades */
@@ -369,7 +359,7 @@ a:hover {
 /* Conteudo - Impacto ambientais */
 .conteudo-container {
   padding: 60px;
-  background-color: #E6FDD6; /* Cor de fundo do container */
+  background-color: #e6fdd6; /* Cor de fundo do container */
 }
 
 .conteudo-container h1 {
@@ -406,7 +396,7 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #E6FDD6; /* Cor de fundo do container */
+  background-color: #e6fdd6; /* Cor de fundo do container */
 }
 
 .conteudo-explicativo li {
@@ -422,7 +412,7 @@ a:hover {
 
 .conteudo {
   padding: 100px;
-  background-color: #B8D702; /* Cor de fundo do conteúdo */
+  background-color: #b8d702; /* Cor de fundo do conteúdo */
   color: #026c48; /* Cor do texto */
   margin: 0 50px; /* Centraliza o conteúdo */
   max-width: 800px; /* Largura máxima do conteúdo */
@@ -506,7 +496,7 @@ a:hover {
 }
 
 .trash-card {
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 15px;
   padding: 1.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -525,14 +515,17 @@ a:hover {
 
 .trash-title {
   font-weight: bold;
-  color: #1565c0;
+  color: #000000;
   margin-bottom: 0.5rem;
+  font-family: "Champ-Black", sans-serif; /* Fonte do título */
 }
 
 .trash-description {
-  color: #555;
+  color: #00432c;
   font-size: 0.95rem;
   line-height: 1.4;
+  font-weight: 500;
+  font-family: "Wagen", sans-serif; /* Fonte do texto */
 }
 
 @media (max-width: 500px) {
@@ -542,23 +535,23 @@ a:hover {
 }
 
 .tipos-lixeiras {
-  background-color: #ebd79c; /* Cor de fundo do container */
+  background-color: #00432c; /* Cor de fundo do container */
   padding: 100px;
   text-align: center;
   color: #000000; /* Cor do texto */
-  font-family: "Poppins", sans-serif; /* Fonte do texto */
   line-height: 1.6; /* Aumenta o espaçamento entre linhas */
 }
 
 .tipos-lixeiras h1 {
   font-size: 2.8em;
   margin-bottom: 20px;
-  color: #000000; /* Cor do título */
+  color: #ffffff; /* Cor do título */
+  font-family: "Champ-Black", sans-serif; /* Fonte do título */
 }
 
 .tipos-lixeiras p {
   font-size: 1.2em; /* Aumenta o tamanho da fonte */
-  color: #000000; /* Cor do texto */
+  color: #ffffff; /* Cor do texto */
   margin-bottom: 50px; /* Espaçamento abaixo do parágrafo */
   line-height: 2; /* Aumenta o espaçamento entre linhas */
   max-width: 100%; /* Largura máxima do texto */
@@ -566,17 +559,18 @@ a:hover {
   padding: 0 20px; /* Adiciona espaçamento lateral */
   text-align: justify; /* Justifica o texto */
   text-justify: inter-word; /* Melhora a justificação do texto */
-  font-family: "Poppins", sans-serif; /* Fonte do texto */
-  font-weight: 400; /* Peso da fonte */
+  font-family: "Wagen", sans-serif; /* Fonte do texto */
+  font-weight: 500; /* Peso da fonte */
   text-align: center; /* Centraliza o texto */
   margin: 20px;
 }
 
 .tipos-lixeiras strong {
-  background-color: #f6c915; /* Cor do texto em negrito */
+  background-color: #b8d702; /* Cor do texto em negrito */
   font-weight: 700; /* Peso da fonte em negrito */
   padding: 5px; /* Espaçamento interno do texto em negrito */
   border-radius: 5px; /* Bordas arredondadas do texto em negrito */
+  color: #00432c;
 }
 
 @media screen and (max-width: 768px) {
@@ -684,7 +678,7 @@ a:hover {
 /* Mapa de coleta */
 
 .mapa {
-  background-color: #ebd79c; /* Cor de fundo do container */
+  background-color: #00432c; /* Cor de fundo do container */
   padding: 100px;
   text-align: center;
   color: #000000; /* Cor do texto */
@@ -695,12 +689,13 @@ a:hover {
 .mapa h1 {
   font-size: 2.8em;
   margin-bottom: 20px;
-  color: #000000; /* Cor do título */
+  color: #ffffff; /* Cor do título */
+  font-family: "Champ-Black", sans-serif; /* Fonte do título */
 }
 
 .mapa p {
   font-size: 1.2em; /* Aumenta o tamanho da fonte */
-  color: #000000; /* Cor do texto */
+  color: #fff; /* Cor do texto */
   margin-bottom: 50px; /* Espaçamento abaixo do parágrafo */
   line-height: 2; /* Aumenta o espaçamento entre linhas */
   max-width: 100%; /* Largura máxima do texto */
@@ -708,7 +703,7 @@ a:hover {
   padding: 0 20px; /* Adiciona espaçamento lateral */
   text-align: justify; /* Justifica o texto */
   text-justify: inter-word; /* Melhora a justificação do texto */
-  font-family: "Poppins", sans-serif; /* Fonte do texto */
+  font-family: "Wagen", sans-serif; /* Fonte do texto */
   font-weight: 400; /* Peso da fonte */
   text-align: center; /* Centraliza o texto */
   margin: 20px;
@@ -722,7 +717,7 @@ a:hover {
 
 .popup-title {
   font-weight: bold;
-  color: #0804ff;
+  color: #00432c;
   margin-bottom: 0.3rem;
 }
 
@@ -850,11 +845,11 @@ footer img {
 /* Quiz Interativo */
 
 .quiz-intro {
-  background-color: #E6FDD6; /* Cor de fundo do container */
+  background-color: #e6fdd6; /* Cor de fundo do container */
   padding: 20px;
   border-radius: 10px;
   text-align: center;
-} 
+}
 .quiz-intro h1 {
   font-size: 2.5em;
   font-family: "Champ-Black", sans-serif;
@@ -862,7 +857,7 @@ footer img {
   color: #00432c; /* Cor do título */
 }
 .quiz-intro p {
-  font-size: 1.2em; /* Aumenta o tamanho da fonte */        
+  font-size: 1.2em; /* Aumenta o tamanho da fonte */
   color: #000000; /* Cor do texto */
   margin-bottom: 30px; /* Espaçamento abaixo do parágrafo */
   line-height: 2; /* Aumenta o espaçamento entre linhas */
@@ -877,59 +872,180 @@ footer img {
   margin: 20px;
 }
 
+.quiz-container {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+  margin: 0 auto 50px auto;
+  font-family: "Poppins", sans-serif;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+.quiz-container h2 {
+  margin-bottom: 15px;
+}
+.btn-quiz {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #b8d702;
+  color: #00432c;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.btn-quiz:hover {
+  background: #02b174;
+}
 
-   .quiz-container {
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      width: 400px;
-      text-align: center;
-      margin: 0 auto 50px auto;
-      font-family: 'Poppins', sans-serif;
-      margin-top: 50px;
-      margin-bottom: 100px;
-      
-    }
-    .quiz-container h2 {
-      margin-bottom: 15px;
-    }
-    .btn-quiz {
-      display: block;
-      width: 100%;
-      margin: 8px 0;
-      padding: 10px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      background: #B8D702;
-      color: #00432c;
-      font-size: 16px;
-      transition: 0.3s;
-    }
-    .btn-quiz:hover {
-      background: #02b174;
-    }
+/* Botões de resposta */
+.btn-quiz {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #38a169; /* verde */
+  color: white;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.btn-quiz:hover {
+  background: #2f855a;
+}
 
-
-    /* Botão de próxima pergunta */
- #next-btn {
+/* Botão de próxima pergunta */
+#next-btn {
   background: #00432c; /* azul */
   margin-top: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
   color: white;
+  font-size: 16px;
+  display: none;
 }
-  #next-btn:hover {
-  background: #003d2c; /* azul mais escuro no hover */
+#next-btn:hover {
+  background: #2b6cb0; /* azul mais escuro */
 }
 
-    #feedback {
-      margin-top: 15px;
-      font-weight: bold;
-    }
-    #history {
-      margin-top: 20px;
-      background: #f9fafb;
-      padding: 10px;
-      border-radius: 8px;
-      font-size: 14px;
-    }
+/* Caixa de feedback */
+.feedback-box {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Ícones */
+.feedback-icon {
+  font-size: 20px;
+}
+
+/* Correto */
+.feedback-box.correct {
+  background: #c6f6d5; /* verde clarinho */
+  color: #22543d;
+  border-left: 6px solid #38a169;
+}
+
+/* Errado */
+.feedback-box.incorrect {
+  background: #fed7d7; /* vermelho clarinho */
+  color: #742a2a;
+  border-left: 6px solid #e53e3e;
+}
+
+/* Resumo final */
+#result {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+btn-quiz.correct {
+  background-color: #38a169;
+  color: #fff;
+}
+
+.btn-quiz.wrong {
+  background-color: #e53e3e;
+  color: #fff;
+}
+
+.btn-quiz:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.swiper {
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  margin: 40px auto;
+  border-radius: 20px;
+  background: #f7fafc;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.slide-img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 15px;
+  transition: transform 0.5s;
+}
+
+.swiper-slide-active .slide-img {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.swiper-slide p {
+  font-size: 16px;
+  color: #2d3748;
+  margin: 6px 0;
+}
+
+.swiper-slide small {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #4a5568;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .swiper {
+    height: 300px;
+  }
+
+  .slide-img {
+    width: 120px;
+  }
+
+  .swiper-slide p {
+    font-size: 14px;
+  }
+}
