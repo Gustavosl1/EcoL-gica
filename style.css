@@ -638,13 +638,13 @@ a:hover {
   padding: 100px;
   text-align: center;
   color: #000000; /* Cor do texto */
-  font-family: "Poppins", sans-serif; /* Fonte do texto */
   line-height: 1.6; /* Aumenta o espaçamento entre linhas */
 }
 .tipos-residuos h1 {
   font-size: 2.8em;
   margin-bottom: 20px;
   color: #ffffff; /* Cor do título */
+  font-family: "Champ-Black", sans-serif; /* Fonte do título */
 }
 .tipos-residuos p {
   font-size: 1.2em; /* Aumenta o tamanho da fonte */
@@ -656,10 +656,16 @@ a:hover {
   padding: 0 20px; /* Adiciona espaçamento lateral */
   text-align: justify; /* Justifica o texto */
   text-justify: inter-word; /* Melhora a justificação do texto */
-  font-family: "Poppins", sans-serif; /* Fonte do texto */
+  font-family: "Wagen", sans-serif; /* Fonte do texto */
   font-weight: 400; /* Peso da fonte */
   text-align: center; /* Centraliza o texto */
   margin: 20px;
+}
+
+.card-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Poppins", Courier, monospace;
 }
 
 @media screen and (max-width: 768px) {
@@ -678,7 +684,7 @@ a:hover {
 /* Mapa de coleta */
 
 .mapa {
-  background-color: #00432c; /* Cor de fundo do container */
+  background-color: #e6fdd6; /* Cor de fundo do container */
   padding: 100px;
   text-align: center;
   color: #000000; /* Cor do texto */
@@ -686,16 +692,19 @@ a:hover {
   line-height: 1.6; /* Aumenta o espaçamento entre linhas */
 }
 
+
+
+
 .mapa h1 {
   font-size: 2.8em;
   margin-bottom: 20px;
-  color: #ffffff; /* Cor do título */
+  color: #00432c; /* Cor do título */
   font-family: "Champ-Black", sans-serif; /* Fonte do título */
 }
 
 .mapa p {
   font-size: 1.2em; /* Aumenta o tamanho da fonte */
-  color: #fff; /* Cor do texto */
+  color: #000000; /* Cor do texto */
   margin-bottom: 50px; /* Espaçamento abaixo do parágrafo */
   line-height: 2; /* Aumenta o espaçamento entre linhas */
   max-width: 100%; /* Largura máxima do texto */
@@ -801,6 +810,13 @@ footer {
   width: 100%;
 }
 
+.footer-content h2 {
+  font-size: 24px; /* Tamanho da fonte do título */
+  margin-bottom: 10px; /* Espaçamento abaixo do título */
+  color: #ffffff; /* Cor do texto do título */
+  font-family: "Champ-Black", sans-serif; /* Fonte do título */
+}
+
 footer p {
   margin: 0; /* Remove a margem do parágrafo */
   font-size: 15px; /* Tamanho da fonte do parágrafo */
@@ -845,7 +861,7 @@ footer img {
 /* Quiz Interativo */
 
 .quiz-intro {
-  background-color: #e6fdd6; /* Cor de fundo do container */
+  background-color: #00432c; /* Cor de fundo do container */
   padding: 20px;
   border-radius: 10px;
   text-align: center;
@@ -854,11 +870,11 @@ footer img {
   font-size: 2.5em;
   font-family: "Champ-Black", sans-serif;
   margin-bottom: 20px;
-  color: #00432c; /* Cor do título */
+  color: #ffffff; /* Cor do título */
 }
 .quiz-intro p {
   font-size: 1.2em; /* Aumenta o tamanho da fonte */
-  color: #000000; /* Cor do texto */
+  color: #ffffff; /* Cor do texto */
   margin-bottom: 30px; /* Espaçamento abaixo do parágrafo */
   line-height: 2; /* Aumenta o espaçamento entre linhas */
   max-width: 100%; /* Largura máxima do texto */
@@ -902,6 +918,17 @@ footer img {
 }
 .btn-quiz:hover {
   background: #02b174;
+}
+
+@media (max-width: 768px) {
+  .quiz-container {
+    width: 100%;
+    margin: 0 10px;
+  }
+
+  .btn-quiz {
+    font-size: 14px;
+  }
 }
 
 /* Botões de resposta */
@@ -1049,3 +1076,134 @@ btn-quiz.correct {
     font-size: 14px;
   }
 }
+
+@media (max-width: 480px) {
+  .swiper {
+    height: 250px;
+  }
+
+  .slide-img {
+    width: 100px;
+  }
+
+  .swiper-slide p {
+    font-size: 12px;
+  }
+}
+
+/* Estatísticas e Gráficos */
+
+.dados-estatisticas {
+  background-color: #e6fdd6; /* Cor de fundo do container */
+  padding: 100px;
+  text-align: center;
+  color: #000000; /* Cor do texto */
+  line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+}
+
+.dados-estatisticas h1 {
+  font-size: 2.8em;
+  margin-bottom: 20px;
+  color: #00432c; /* Cor do título */
+  font-family: "Champ-Black", sans-serif; /* Fonte do título */
+}
+
+.dados-estatisticas p {
+  font-size: 1.2em; /* Aumenta o tamanho da fonte */
+  color: #000000; /* Cor do texto */
+  margin-bottom: 30px; /* Espaçamento abaixo do parágrafo */
+  line-height: 2; /* Aumenta a legibilidade */
+  max-width: 100%; /* Largura máxima do texto */
+  margin: 0 auto; /* Centraliza o texto */
+  padding: 0 20px; /* Adiciona espaçamento lateral */
+  text-align: justify; /* Justifica o texto */
+  text-justify: inter-word; /* Melhora a justificação do texto */
+  font-family: "Poppins", sans-serif; /* Fonte do texto */
+  font-weight: 400; /* Peso da fonte */
+}
+
+
+
+main {
+  max-width: 1100px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+}
+
+.chart-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+canvas {
+  width: 100% !important;
+  height: 400px !important;
+}
+
+.intro {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.info {
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: center;
+  color: #555;
+  margin-top: 15px;
+}
+
+a {
+  color: #2e7d32;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  main {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .chart-container {
+    padding: 15px;
+  }
+
+  canvas {
+    height: 300px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .chart-container {
+    padding: 10px;
+  }
+
+  canvas {
+    height: 250px !important;
+  }
+}
+
+/*Indicadores*/
+
+
+
+
+

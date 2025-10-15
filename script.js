@@ -331,6 +331,23 @@ function showScore() {
   showHistory();
 }
 
+function saveScore(score) {
+  let history = JSON.parse(localStorage.getItem("quizHistory")) || [];
+  const date = new Date();
+  history.push({ score: score, date: date.toLocaleString() });
+  localStorage.setItem("quizHistory", JSON.stringify(history));
+}
+
+function showHistory() {
+  let history = JSON.parse(localStorage.getItem("quizHistory")) || [];
+  historyElement.innerHTML = "<h3>Histórico de Pontuações:</h3>";
+  history.forEach((item) => {
+    const div = document.createElement("div");
+    div.innerHTML = `Pontuação: ${item.score} - Data: ${item.date}`;
+    historyElement.appendChild(div);
+  });
+}
+
 function handleNextButton() {
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {
@@ -346,3 +363,85 @@ nextButton.addEventListener("click", () => {
   }
 });
 startQuiz();
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Registrar plugin
+  Chart.register(ChartDataLabels);
+
+  const ctx = document.getElementById('graficoBarra').getContext('2d');
+
+  const labels = ['Norte', 'Nordeste', 'Centro-Oeste', 'Sudeste', 'Sul'];
+  const coleta = [33.5, 45.0, 55.0, 70.0, 81.9];
+  const lixoes = [73.8, 51.6, 52.9, 12.1, 5.7];
+
+  const grafico = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Coleta Seletiva (%)',
+          data: coleta,
+          backgroundColor: 'rgba(56,142,60,0.85)',
+          borderRadius: 10
+        },
+        {
+          label: 'Municípios com Lixões (%)',
+          data: lixoes,
+          backgroundColor: 'rgba(244,67,54,0.85)',
+          borderRadius: 10
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      animation: {
+        duration: 1500,
+        easing: 'easeOutQuart'
+      },
+      plugins: {
+        legend: {
+          position: 'top',
+          labels: { font: { size: 14 } }
+        },
+        title: {
+          display: true,
+          text: 'Coleta Seletiva vs Lixões por Região (IBGE 2024)',
+          font: { size: 18, weight: 'bold' }
+        },
+        datalabels: {
+          color: '#fff',
+          anchor: 'end',
+          align: 'start',
+          font: { weight: 'bold', size: 12 },
+          formatter: value => value + '%'
+        },
+        tooltip: {
+          backgroundColor: '#2e7d32',
+          titleColor: '#fff',
+          bodyColor: '#fff',
+          bodyFont: { size: 14 },
+          callbacks: {
+            label: function(context) {
+              return context.dataset.label + ': ' + context.raw + '%';
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: { callback: value => value + '%' },
+          grid: { color: 'rgba(0,0,0,0.05)' }
+        },
+        x: {
+          grid: { display: false }
+        }
+      }
+    },
+    plugins: [ChartDataLabels]
+  });
+});
+
+
+d

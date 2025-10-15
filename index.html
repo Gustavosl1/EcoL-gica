@@ -215,6 +215,53 @@
       </div>
     </div>
 
+    <!--Dados e Estatísticas-->
+    <section class="dados-estatisticas" id="dados-estatisticas">
+      <h1>Coleta Seletiva e Lixões no Brasil (IBGE 2024)</h1>
+
+      <main>
+        <p class="intro">
+          Esta seção apresenta dados oficiais sobre a
+          <strong>coleta seletiva</strong> e o <strong>uso de lixões</strong> em
+          diferentes regiões do Brasil. As informações são baseadas na
+          <a
+            href="https://noticias.uol.com.br/ultimas-noticias/agencia-brasil/2024/11/28/ibge-605-dos-municipios-tem-coleta-seletiva.htm"
+            target="_blank"
+            >pesquisa do IBGE de 2024</a
+          >
+          e na
+          <a
+            href="https://jcam.com.br/noticias/lixoes-ainda-sao-utilizados-em-738-dos-municipios-na-regiao-norte-aponta-pesquisa-do-ibge/"
+            target="_blank"
+            >reportagem da JCAM</a
+          >
+        </p>
+
+        <p class="intro">
+          Os dados mostram que, embora o Brasil tenha avançado na gestão de
+          resíduos, ainda há grandes desigualdades regionais. O Sul e o Sudeste
+          apresentam índices mais altos de coleta seletiva e menos municípios
+          com lixões, enquanto o Norte e o Nordeste enfrentam maiores desafios
+          em infraestrutura e formalização da coleta. Essas informações são
+          essenciais para entender como políticas públicas podem incentivar uma
+          <strong>economia sustentável</strong> e reduzir os impactos
+          ambientais.
+        </p>
+
+        <div class="chart-container">
+          <canvas id="graficoBarra"></canvas>
+        </div>
+
+        <div class="info">
+          <p>
+            O gráfico mostra que regiões como Sudeste e Sul têm alta coleta
+            seletiva e poucos lixões, enquanto Norte e Nordeste ainda enfrentam
+            grandes desafios.
+          </p>
+        </div>
+      </main>
+    </section>
+
     <!---Carrosel-->
 
     <!--Quiz-->
@@ -239,6 +286,7 @@
         <div id="history"></div>
       </div>
     </section>
+
 
     <!--Mapa-->
     <div class="mapa" id="local-descarte">
@@ -270,6 +318,8 @@
       <i class="fas fa-arrow-up"></i>
     </button>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script src="script.js"></script>
   </body>
 </html>
