@@ -193,6 +193,49 @@ const locaisDeColeta = [
     telefone: "(11) 973610728",
     coords: [-23.430628, -46.788364],
   },
+  {
+    nome: "Ecoponto: Vila Jaguara",
+    endereco: "Rua Agrestina, nº 189 – Bairro: Vila Jaguara",
+    cep: "05117-100",
+    funcionamento:
+      "Segunda a sábado das 6h às 22h. Domingos e feriados das 6h às 18h.",
+    coords: [-23.51651, -46.74154],
+  },
+  {
+    nome: "Ecoponto: Vigário Godói",
+    tipo: "Este ecoponto recebe gesso",
+    endereco: "Rua Vigário Godói, nº 480 – Bairro: Vila Zat",
+    cep: "02976-080",
+    funcionamento:
+      "Segunda a sábado das 6h às 22h. Domingos e feriados das 6h às 18h.",
+    coords: [-23.47756, -46.71818],
+  },
+  {
+    nome: "Ecoponto: Viaduto Engenheiro Alberto Badra",
+    tipo: "Este ecoponto recebe gesso",
+    endereco:
+      "Avenida Aricanduva, nº 200 - Praça Lúcia Mekhitarian – Bairro: Aricanduva (baixo do Viaduto Engenheiro Alberto Badra)",
+    cep: "03501-010",
+    funcionamento:
+      "Segunda a sábado das 6h às 22h. Domingos e feriados das 6h às 18h.",
+    coords: [-23.53717, -46.54739],
+  },
+  {
+    nome: "Ecoponto Vila Luisa",
+    endereco: "Rua Manoel Graça - Guaiauna",
+    cep: "03631-120",
+    funcionamento:
+      "Segunda a sábado das 6h às 22h. Domingos e feriados das 6h às 18h.",
+    coords: [-23.53048, -46.55234],
+  },
+  {
+    nome: "Ecoponto Vila Madalena Corpus",
+    endereco: "Rua Girassol, 21 - Vila Madalena",
+    cep: "05433-000",
+    funcionamento:
+      "Segunda a sábado das 6h às 22h. Domingos e feriados das 6h às 18h.",
+    coords: [-23.55748, -46.68739],
+  },
 ];
 
 locaisDeColeta.forEach((local) => {
@@ -364,84 +407,170 @@ nextButton.addEventListener("click", () => {
 });
 startQuiz();
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
   // Registrar plugin
   Chart.register(ChartDataLabels);
 
-  const ctx = document.getElementById('graficoBarra').getContext('2d');
+  const ctx = document.getElementById("graficoBarra").getContext("2d");
 
-  const labels = ['Norte', 'Nordeste', 'Centro-Oeste', 'Sudeste', 'Sul'];
+  const labels = ["Norte", "Nordeste", "Centro-Oeste", "Sudeste", "Sul"];
   const coleta = [33.5, 45.0, 55.0, 70.0, 81.9];
   const lixoes = [73.8, 51.6, 52.9, 12.1, 5.7];
 
   const grafico = new Chart(ctx, {
-    type: 'bar',
+    type: "bar",
     data: {
       labels: labels,
       datasets: [
         {
-          label: 'Coleta Seletiva (%)',
+          label: "Coleta Seletiva (%)",
           data: coleta,
-          backgroundColor: 'rgba(56,142,60,0.85)',
-          borderRadius: 10
+          backgroundColor: "rgba(56,142,60,0.85)",
+          borderRadius: 10,
         },
         {
-          label: 'Municípios com Lixões (%)',
+          label: "Municípios com Lixões (%)",
           data: lixoes,
-          backgroundColor: 'rgba(244,67,54,0.85)',
-          borderRadius: 10
-        }
-      ]
+          backgroundColor: "rgba(244,67,54,0.85)",
+          borderRadius: 10,
+        },
+      ],
     },
     options: {
       responsive: true,
       animation: {
         duration: 1500,
-        easing: 'easeOutQuart'
+        easing: "easeOutQuart",
       },
       plugins: {
         legend: {
-          position: 'top',
-          labels: { font: { size: 14 } }
+          position: "top",
+          labels: { font: { size: 14 } },
         },
         title: {
           display: true,
-          text: 'Coleta Seletiva vs Lixões por Região (IBGE 2024)',
-          font: { size: 18, weight: 'bold' }
+          text: "Coleta Seletiva vs Lixões por Região (IBGE 2024)",
+          font: { size: 18, weight: "bold" },
         },
         datalabels: {
-          color: '#fff',
-          anchor: 'end',
-          align: 'start',
-          font: { weight: 'bold', size: 12 },
-          formatter: value => value + '%'
+          color: "#fff",
+          anchor: "end",
+          align: "start",
+          font: { weight: "bold", size: 12 },
+          formatter: (value) => value + "%",
         },
         tooltip: {
-          backgroundColor: '#2e7d32',
-          titleColor: '#fff',
-          bodyColor: '#fff',
+          backgroundColor: "#2e7d32",
+          titleColor: "#fff",
+          bodyColor: "#fff",
           bodyFont: { size: 14 },
           callbacks: {
-            label: function(context) {
-              return context.dataset.label + ': ' + context.raw + '%';
-            }
-          }
-        }
+            label: function (context) {
+              return context.dataset.label + ": " + context.raw + "%";
+            },
+          },
+        },
       },
       scales: {
         y: {
           beginAtZero: true,
-          ticks: { callback: value => value + '%' },
-          grid: { color: 'rgba(0,0,0,0.05)' }
+          ticks: { callback: (value) => value + "%" },
+          grid: { color: "rgba(0,0,0,0.05)" },
         },
         x: {
-          grid: { display: false }
-        }
-      }
+          grid: { display: false },
+        },
+      },
     },
-    plugins: [ChartDataLabels]
+    plugins: [ChartDataLabels],
   });
 });
 
+function animateCircle(circle) {
+  const valueElem = circle.querySelector(".value");
+  const target = parseInt(circle.getAttribute("data-value"));
+  let current = 0;
+  const duration = 1500;
+  const step = (16 / duration) * target;
 
-d
+  function update() {
+    current += step;
+    if (current >= target) {
+      current = target;
+      valueElem.innerText = target;
+    } else {
+      valueElem.innerText = Math.floor(current);
+      const deg = (current / target) * 360;
+      circle.style.background = `conic-gradient(${circle.style.getPropertyValue(
+        "--color"
+      )} ${deg}deg, #000000ff 0deg)`;
+      requestAnimationFrame(update);
+    }
+  }
+  update();
+}
+
+const circles = document.querySelectorAll(".circle");
+let animated = false;
+
+function isInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return rect.top <= window.innerHeight && rect.bottom >= 0;
+}
+
+window.addEventListener("scroll", () => {
+  if (!animated) {
+    circles.forEach((circle) => {
+      if (isInViewport(circle)) {
+        animateCircle(circle);
+      }
+    });
+    animated = true;
+  }
+});
+circles.forEach((circle) => {
+  if (isInViewport(circle)) {
+    animateCircle(circle);
+  }
+});
+
+const dicas = [
+  "Leve sua própria garrafinha de água e reduza o uso de plásticos descartáveis.",
+  "Prefira andar de transporte público ou bicicleta.",
+  "Evite desperdício de alimentos, planeje suas compras.",
+  "Separe corretamente o lixo reciclável em casa.",
+  "Apague as luzes e desligue aparelhos quando não estiver usando.",
+  "Use sacolas reutilizáveis para suas compras.",
+  "Plante uma árvore ou cuide de plantas na sua região.",
+  "Dê preferência a produtos locais e sazonais.",
+  "Economize papel, use os dois lados para imprimir ou escrever.",
+  "Compre produtos com menos embalagens.",
+  "Reduza o consumo de água, fechando a torneira enquanto escova os dentes.",
+  "Participe de mutirões de limpeza na sua comunidade.",
+  "Doe roupas e objetos que você não usa mais.",
+  "Evite produtos descartáveis, opte por itens reutilizáveis.",
+  "Incentive a reciclagem no seu local de trabalho ou escola.",
+  "Use lâmpadas LED, que são mais eficientes e duram mais.",
+  "Evite o uso de produtos químicos agressivos na limpeza doméstica.",
+  "Apoie iniciativas e empresas sustentáveis.",
+  "Reduza o consumo de carne, experimente refeições vegetarianas.",
+  "Eduque-se e compartilhe informações sobre sustentabilidade com amigos e familiares.",
+];
+
+// Seleciona a dica do dia
+const hoje = new Date();
+const indiceDica = hoje.getDate() % dicas.length;
+const frase = dicas[indiceDica];
+
+const dicaElem = document.getElementById("dica");
+let i = 0;
+
+function typeWriter() {
+  if (i < frase.length) {
+    dicaElem.innerHTML += frase.charAt(i);
+    i++;
+    setTimeout(typeWriter, 50); // Velocidade da digitação
+  }
+}
+
+typeWriter();
