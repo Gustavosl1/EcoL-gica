@@ -528,11 +528,8 @@ window.addEventListener("scroll", () => {
     animated = true;
   }
 });
-circles.forEach((circle) => {
-  if (isInViewport(circle)) {
-    animateCircle(circle);
-  }
-});
+
+
 
 const dicas = [
   "Leve sua própria garrafinha de água e reduza o uso de plásticos descartáveis.",
