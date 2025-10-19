@@ -497,48 +497,21 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-function animateCircle(circle) {
-  const valueElem = circle.querySelector(".value");
-  const target = parseInt(circle.getAttribute("data-value"));
-  let current = 0;
-  const duration = 1500;
-  const step = (16 / duration) * target;
+document.addEventListener("DOMContentLoaded", () => {
+  const section = document.querySelector("#impacto-ambiental");
+  const cards = document.querySelectorAll(".circular-card");
 
-  function update() {
-    current += step;
-    if (current >= target) {
-      current = target;
-      valueElem.innerText = target;
-    } else {
-      valueElem.innerText = Math.floor(current);
-      const deg = (current / target) * 360;
-       circle.style.background = `conic-gradient(${circle.style.getPropertyValue('--color')} ${deg}deg, #000000ff 0deg)`;
-      requestAnimationFrame(update);
-    }
-  }
-  update();
-}
-
-const circles = document.querySelectorAll(".circle");
-let animated = false; 
-
-function isInViewport(el) {
-  const rect = el.getBoundingClientRect();
-  return rect.top <= window.innerHeight && rect.bottom >= 0;
-}
-
-window.addEventListener("scroll", () => {
-  if (!animated) {
-    circles.forEach((circle) => {
-      if (isInViewport(circle)) {
-        animateCircle(circle);
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
       }
     });
-    animated = true;
-    window.removeEventListener("scroll", this);;
-  }
-});
+  }, { threshold: 0.2 });
 
+  observer.observe(section);
+  cards.forEach(card => observer.observe(card));
+});
 
 
 const dicas = [

@@ -1144,7 +1144,7 @@ canvas {
 }
 
 canvas#graficoBarra {
-  width: 100% !important;   /* garante responsividade */
+  width: 100% !important; /* garante responsividade */
   height: 500px !important; /* altura fixa */
 }
 
@@ -1181,8 +1181,6 @@ a:hover {
     width: 100% !important;
   }
 
-
-
   .intro {
     font-size: 14px;
   }
@@ -1205,87 +1203,103 @@ a:hover {
   .dados-estatisticas p {
     font-size: 1em;
   }
-} 
+}
 
 /*Impacto Ambiental*/
 
-/* Evita que o conteúdo passe sobre a navbar */
+/* ----- Estrutura Geral ----- */
 #impacto-ambiental {
   padding: 80px 40px;
-  background: #e6fdd6;
-  border-radius: 15px;
+  background-color: #00432c;
+  color: #ffffff;
   text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+#impacto-ambiental.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 #impacto-ambiental h1 {
   font-size: 2.8em;
-  margin-bottom: 20px;
-  color: #00432c;
   font-family: "Champ-Black", sans-serif;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #ffffff;
 }
 
 #impacto-ambiental .intro {
-  font-size: 1.1rem;
-  color: #000000;
-  font-family: "Poppins", sans-serif;
-  margin-bottom: 40px;
-  line-height: 1.6;
 
-  text-align: justify; /* Justifica o texto */
-  text-justify: inter-word; /* Melhora a justificação do texto */
+  margin: 0 auto 50px;
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 
-/* Cards */
+/* ----- Cards Circulares ----- */
 .circular-cards {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 30px;
-  margin-bottom: 40px;
+  gap: 40px;
 }
 
 .circular-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  width: 300px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.circular-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.circular-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* ----- Círculo Estilizado ----- */
+.circle {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background: conic-gradient(var(--color) calc(var(--value) * 1%), #000000 0);
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 250px;
-  height: 420px; /* altura uniforme para textos maiores */
-}
-
-.circle {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background: conic-gradient(var(--color) 0deg, #000000 0deg);
-  display: flex;
-  align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.6em;
+  position: relative;
 }
-
 
 .circle .icon {
-  position: absolute;
-  font-size: 2.5rem;
-  animation: pulse 2s infinite;
+  font-size: 1.8em;
+  margin-bottom: 5px;
 }
 
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
+.circle .value {
+  font-size: 1em;
 }
 
-.value {
-  font-size: 2rem;
-  color: #fff;
-  z-index: 1;
-}
-
+/* ----- Texto dos Cards ----- */
 .circular-card p {
   font-size: 1rem;
   line-height: 1.4;
@@ -1298,59 +1312,49 @@ a:hover {
   text-justify: inter-word;
 }
 
-.circular-card p .tooltip {
-  display: none;
-  position: absolute;
-  bottom: -25px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #333;
-  color: #fff;
-  font-size: 0.75rem;
-  padding: 4px 8px;
-  border-radius: 6px;
-  white-space: nowrap;
+.circular-card strong {
+  color: #00432c;
 }
 
-.circular-card p:hover .tooltip {
+.fonte {
   display: block;
+  margin-top: 10px;
+  font-size: 0.85em;
+  color: #555;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
 }
 
-.circular-card p .tooltip a {
-  color: #ffffff;
+.fonte a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+.fonte a:hover {
   text-decoration: underline;
 }
 
-/* Responsividade */
-@media (max-width: 1024px) {
-  .circular-cards {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 768px) {
+/* ----- Responsividade ----- */
+@media (max-width: 900px) {
   .circular-cards {
     flex-direction: column;
-    gap: 30px;
     align-items: center;
+  }
+  .circular-card {
+    width: 90%;
+  }
+  #impacto-ambiental h1 {
+    font-size: 1.8em;
+  }
+  .circle {
+    width: 110px;
+    height: 110px;
+    font-size: 1.3em;
   }
 }
 
-@media (max-width: 480px) {
-  .circle {
-    width: 120px;
-    height: 120px;
-  }
-  .circle .icon {
-    font-size: 2rem;
-  }
-  .value {
-    font-size: 1.5rem;
-  }
-  .circular-card {
-    height: auto; /* ajusta altura automática em telas pequenas */
-  }
-}
+
+/* Dados Impactantes */
 
 #dados-impactantes {
   padding: 80px 40px;
