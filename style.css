@@ -1145,7 +1145,7 @@ canvas {
 
 canvas#graficoBarra {
   width: 100% !important;   /* garante responsividade */
-  height: 400px !important; /* altura fixa */
+  height: 500px !important; /* altura fixa */
 }
 
 .intro {

@@ -441,10 +441,10 @@ document.addEventListener("DOMContentLoaded", function () {
       maintainAspectRatio: false, // 🔹 adiciona isso
       layout: {
         padding: {
-          top: 20,
-          right: 20,
-          bottom: 20,
-          left: 20,
+          top: 0,
+          right: 0,
+          bottom: 0,
+          left: 0,
         },
 
         auto: true,
@@ -461,12 +461,12 @@ document.addEventListener("DOMContentLoaded", function () {
         title: {
           display: true,
           text: "Coleta Seletiva vs Lixões por Região (IBGE 2024)",
-          font: { size: 18, weight: "bold" },
+          font: { size: 12, weight: "bold" },
         },
         datalabels: {
-          color: "#fff",
+          color: "#000000ff",
           anchor: "end",
-          align: "start",
+          align: "top",
           font: { weight: "bold", size: 12 },
           formatter: (value) => value + "%",
         },
@@ -512,7 +512,7 @@ function animateCircle(circle) {
     } else {
       valueElem.innerText = Math.floor(current);
       const deg = (current / target) * 360;
-       circle.style.background = `conic-gradient(${circle.style.getPropertyValue('--color')} ${deg}deg, #eee 0deg)`;
+       circle.style.background = `conic-gradient(${circle.style.getPropertyValue('--color')} ${deg}deg, #000000ff 0deg)`;
       requestAnimationFrame(update);
     }
   }
@@ -520,7 +520,7 @@ function animateCircle(circle) {
 }
 
 const circles = document.querySelectorAll(".circle");
-let animated = false;
+let animated = false; 
 
 function isInViewport(el) {
   const rect = el.getBoundingClientRect();
@@ -535,6 +535,7 @@ window.addEventListener("scroll", () => {
       }
     });
     animated = true;
+    window.removeEventListener("scroll", this);;
   }
 });
 
