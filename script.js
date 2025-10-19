@@ -438,6 +438,17 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false, // 🔹 adiciona isso
+      layout: {
+        padding: {
+          top: 20,
+          right: 20,
+          bottom: 20,
+          left: 20,
+        },
+
+        auto: true,
+      },
       animation: {
         duration: 1500,
         easing: "easeOutQuart",
@@ -501,9 +512,7 @@ function animateCircle(circle) {
     } else {
       valueElem.innerText = Math.floor(current);
       const deg = (current / target) * 360;
-      circle.style.background = `conic-gradient(${circle.style.getPropertyValue(
-        "--color"
-      )} ${deg}deg, #000000ff 0deg)`;
+       circle.style.background = `conic-gradient(${circle.style.getPropertyValue('--color')} ${deg}deg, #eee 0deg)`;
       requestAnimationFrame(update);
     }
   }

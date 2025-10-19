@@ -1143,6 +1143,11 @@ canvas {
   height: 400px !important;
 }
 
+canvas#graficoBarra {
+  width: 100% !important;   /* garante responsividade */
+  height: 400px !important; /* altura fixa */
+}
+
 .intro {
   font-size: 16px;
   line-height: 1.6;
@@ -1172,8 +1177,11 @@ a:hover {
   }
 
   canvas {
-    height: 300px !important;
+    height: 100% !important;
+    width: 100% !important;
   }
+
+
 
   .intro {
     font-size: 14px;
